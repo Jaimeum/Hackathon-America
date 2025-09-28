@@ -4,10 +4,7 @@ Módulo para obtener datos de StatsBomb
 import pandas as pd
 from statsbombpy import sb
 from typing import List, Dict, Optional
-import sys
-import os
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from config import StatsBombConfig
+from .config import StatsBombConfig
 
 class StatsBombDataFetcher:
     def __init__(self):
