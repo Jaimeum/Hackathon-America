@@ -7,6 +7,19 @@
 	},
 	"containerEnv": {
 	  "UV_LINK_MODE": "copy"
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"anysphere.cursorpyright",
+				"ms-azuretools.vscode-containers",
+				"ms-python.python",
+				"ms-toolsai.jupyter",
+				"ms-toolsai.jupyter-keymap",
+				"ms-toolsai.jupyter-renderers",
+				"ms-toolsai.vscode-jupyter-cell-tags",
+				"ms-toolsai.vscode-jupyter-slideshow"
+			]
+		}
 	}
-  }
-  
+}
