@@ -8,3 +8,5 @@ Proyecto - Hackaton del club america
    ```bash
    uv sync
    ```
+
+me la pelas
