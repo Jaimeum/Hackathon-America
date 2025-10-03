@@ -8,5 +8,3 @@ Proyecto - Hackaton del club america
    ```bash
    uv sync
    ```
-
-"huevos Jaimito"
