@@ -21,9 +21,9 @@ class DataLoader:
     def df(self) -> pd.DataFrame:
         """Carga los datos solo cuando se necesitan (lazy loading)"""
         if self._df is None:
-            print(f"📂 Cargando datos desde: {self.data_path}")
+            print(f"Cargando datos desde: {self.data_path}")
             self._df = pd.read_csv(self.data_path)
-            print(f"✅ Cargados {len(self._df)} registros")
+            print(f"Cargados {len(self._df)} registros")
         return self._df
     
     def get_players(

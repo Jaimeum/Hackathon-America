@@ -60,5 +60,30 @@ POSITION_FEATURES = {
     'Goalkeeper': [
         'player_season_save_ratio_norm',
         'player_season_obv_90_norm'
+    ],
+    'FWD': [  # Forward
+        'player_season_goals_90_norm',
+        'player_season_np_xg_90_norm',
+        'player_season_assists_90_norm',
+        'player_season_shot_touch_ratio_norm',
+        'player_season_obv_shot_90_norm'
+    ],
+    'MED': [  # Midfielder
+        'player_season_assists_90_norm',
+        'player_season_key_passes_90_norm',
+        'player_season_obv_pass_90_norm',
+        'player_season_pressures_90_norm',
+        'player_season_obv_90_norm'
+    ],
+    'DEF': [  # Defender
+        'player_season_tackles_90_norm',
+        'player_season_interceptions_90_norm',
+        'player_season_defensive_actions_90_norm',
+        'player_season_obv_defensive_action_90_norm',
+        'player_season_aerial_ratio_norm'
+    ],
+    'GK': [  # Goalkeeper
+        'player_season_save_ratio_norm',
+        'player_season_obv_90_norm'
     ]
 }

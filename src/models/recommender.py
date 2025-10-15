@@ -89,7 +89,7 @@ class PlayerRecommender:
             available = self.df['player_name'].str.contains(player_name.split()[0], case=False, na=False)
             if available.any():
                 suggestions = self.df[available]['player_name'].unique()[:5]
-                raise ValueError(f"Jugador '{player_name}' no encontrado. ¿Quisiste decir: {suggestions}?")
+                raise ValueError(f"Jugador '{player_name}' no encontrado. ¿Quisiste decir: {suggestions}?") #Para intentar frenar typos
             raise ValueError(f"Jugador '{player_name}' no encontrado")
         
         player_idx = player_mask.idxmax()
@@ -107,7 +107,7 @@ class PlayerRecommender:
         if exclude_same_team:
             candidate_mask &= (self.df['team_name'] != player_data['team_name'])
         
-        # Excluir al jugador mismo
+        # Excluir al mismo jugador
         candidate_mask.loc[player_idx] = False
         
         # Obtener índices de candidatos
@@ -128,10 +128,11 @@ class PlayerRecommender:
         # Aplicar filtro de similitud mínima
         results = results[results['similarity_score'] >= min_similarity]
         
-        # Calcular score contextual (edad, experiencia, etc)
+        # Calcular score contextual (edad, experiencia, etc) 
+        # Esto solo basado en los datos del dataset, pero podria mejorar con metricas mas especificas
         results['context_score'] = self._calculate_context_score(results, player_data)
         
-        # Score final combinado
+        # Score final combinado (escogimos asi la ponderacion por dedazo, pero podemos adecuarla de acuerdo a las necesidades)
         results['final_score'] = (
             0.7 * results['similarity_score'] + 
             0.3 * results['context_score']

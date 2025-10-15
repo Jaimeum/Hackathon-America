@@ -11,6 +11,7 @@ dependencies = [
     "pandas>=2.3.2",
     "pathlib>=1.0.1",
     "pyarrow>=21.0.0",
+    "scikit-learn>=1.7.2",
     "seaborn>=0.13.2",
     "statsbombpy>=1.16.0",
 ]
