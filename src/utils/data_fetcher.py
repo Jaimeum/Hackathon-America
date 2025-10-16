@@ -4,7 +4,7 @@ Módulo para obtener datos de StatsBomb
 import pandas as pd
 from statsbombpy import sb
 from typing import List, Dict, Optional
-from .config import StatsBombConfig
+from .statsbomb_config import StatsBombConfig
 
 class StatsBombDataFetcher:
     def __init__(self):
