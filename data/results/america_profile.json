@@ -1,0 +1,66 @@
+{
+  "metadata": {
+    "n_seasons": 4,
+    "n_matches": 175,
+    "team_name": "Club Am\u00e9rica",
+    "win_rate": 53.714285714285715
+  },
+  "averages": {
+    "offensive_quality": 1.0922261186461961,
+    "defensive_quality": 0.6514964162072994,
+    "set_pieces": 0.08433446321718871,
+    "pressing_intensity": 1.7308936310021725,
+    "possession_control": 212.45006007893147,
+    "shot_quality": 8.464360349197333
+  },
+  "trends": {
+    "offensive_quality": {
+      "change": -0.18617819613183684,
+      "direction": "empeorando"
+    },
+    "defensive_quality": {
+      "change": 0.06195342819740124,
+      "direction": "mejorando"
+    },
+    "set_pieces": {
+      "change": -0.013174135666360082,
+      "direction": "empeorando"
+    },
+    "pressing_intensity": {
+      "change": -0.15829562786047946,
+      "direction": "empeorando"
+    },
+    "possession_control": {
+      "change": -15.836916865576143,
+      "direction": "empeorando"
+    },
+    "shot_quality": {
+      "change": 0.39585994438122896,
+      "direction": "mejorando"
+    }
+  },
+  "consistency": {
+    "offensive_quality": 0.19070930251611998,
+    "defensive_quality": 0.03984855540522344,
+    "set_pieces": 0.018153935461542866,
+    "pressing_intensity": 0.15267364403596856,
+    "possession_control": 14.35412615745859,
+    "shot_quality": 0.3546055457195377
+  },
+  "rankings": {
+    "offensive_quality": 92.12962962962963,
+    "defensive_quality": 28.240740740740744,
+    "set_pieces": 40.972222222222214,
+    "pressing_intensity": 60.41666666666667,
+    "possession_control": 54.166666666666664,
+    "shot_quality": 26.388888888888886
+  },
+  "dimensions": {
+    "offensive_quality": 92.12962962962963,
+    "defensive_quality": 28.240740740740744,
+    "set_pieces": 40.972222222222214,
+    "pressing_intensity": 60.41666666666667,
+    "possession_control": 54.166666666666664,
+    "shot_quality": 26.388888888888886
+  }
+}
