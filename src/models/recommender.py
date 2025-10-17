@@ -37,7 +37,7 @@ class PlayerRecommender:
         Prepara el sistema de recomendación
         
         Args:
-            min_minutes: Minutos mínimos jugados para considerar jugador
+            min_minutes: Minutos mínimos jugados para considerar jugador (podemos cambiarlo a consideración del DT)
         """
         # Cargar datos filtrados
         self.df = self.data_loader.get_players(min_minutes=min_minutes)
@@ -54,8 +54,8 @@ class PlayerRecommender:
         # Pre-calcular matriz de similitud
         self._similarity_matrix = cosine_similarity(self._features_scaled)
         
-        print(f"✅ Sistema entrenado con {len(self.df)} jugadores")
-        print(f"📊 Varianza explicada por PCA: {self.pca.explained_variance_ratio_.sum():.2%}")
+        print(f"Sistema entrenado con {len(self.df)} jugadores")
+        print(f"Varianza explicada por PCA: {self.pca.explained_variance_ratio_.sum():.2%}")
         
         return self
     
@@ -69,7 +69,7 @@ class PlayerRecommender:
         min_similarity: float = 0.0
     ) -> pd.DataFrame:
         """
-        Encuentra jugadores similares a uno dado
+        Encuentra jugadores similares a uno dado como pivote
         
         Args:
             player_name: Nombre del jugador de referencia
@@ -89,7 +89,7 @@ class PlayerRecommender:
             available = self.df['player_name'].str.contains(player_name.split()[0], case=False, na=False)
             if available.any():
                 suggestions = self.df[available]['player_name'].unique()[:5]
-                raise ValueError(f"Jugador '{player_name}' no encontrado. ¿Quisiste decir: {suggestions}?") #Para intentar frenar typos
+                raise ValueError(f"Jugador '{player_name}' no encontrado. ¿Quisiste decir: {suggestions}?")
             raise ValueError(f"Jugador '{player_name}' no encontrado")
         
         player_idx = player_mask.idxmax()
@@ -107,7 +107,7 @@ class PlayerRecommender:
         if exclude_same_team:
             candidate_mask &= (self.df['team_name'] != player_data['team_name'])
         
-        # Excluir al mismo jugador
+        # Excluir al jugador mismo
         candidate_mask.loc[player_idx] = False
         
         # Obtener índices de candidatos
@@ -128,11 +128,10 @@ class PlayerRecommender:
         # Aplicar filtro de similitud mínima
         results = results[results['similarity_score'] >= min_similarity]
         
-        # Calcular score contextual (edad, experiencia, etc) 
-        # Esto solo basado en los datos del dataset, pero podria mejorar con metricas mas especificas
+        # Calcular score contextual (edad, experiencia, etc)
         results['context_score'] = self._calculate_context_score(results, player_data)
         
-        # Score final combinado (escogimos asi la ponderacion por dedazo, pero podemos adecuarla de acuerdo a las necesidades)
+        # Score final combinado
         results['final_score'] = (
             0.7 * results['similarity_score'] + 
             0.3 * results['context_score']
