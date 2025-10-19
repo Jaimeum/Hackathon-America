@@ -1,0 +1,302 @@
+{
+  "PC1": {
+    "explained_variance": 0.20056270524268557,
+    "top_features": [
+      {
+        "feature": "team_season_xgd_pg",
+        "weight": 0.15807187278328738,
+        "abs_weight": 0.15807187278328738
+      },
+      {
+        "feature": "team_season_xgd",
+        "weight": 0.15686358005289974,
+        "abs_weight": 0.15686358005289974
+      },
+      {
+        "feature": "team_season_np_xgd_pg",
+        "weight": 0.15643799681716244,
+        "abs_weight": 0.15643799681716244
+      },
+      {
+        "feature": "team_season_gd_pg",
+        "weight": 0.15239913302041422,
+        "abs_weight": 0.15239913302041422
+      },
+      {
+        "feature": "team_season_gd",
+        "weight": 0.15080687347889268,
+        "abs_weight": 0.15080687347889268
+      }
+    ]
+  },
+  "PC2": {
+    "explained_variance": 0.09342379582316761,
+    "top_features": [
+      {
+        "feature": "team_season_ball_in_play_time",
+        "weight": 0.21251492906336916,
+        "abs_weight": 0.21251492906336916
+      },
+      {
+        "feature": "team_season_ppda",
+        "weight": 0.1698361550645014,
+        "abs_weight": 0.1698361550645014
+      },
+      {
+        "feature": "team_season_opp_passing_ratio",
+        "weight": 0.16681941395103675,
+        "abs_weight": 0.16681941395103675
+      },
+      {
+        "feature": "team_season_defensive_distance_ppda",
+        "weight": -0.166479892499666,
+        "abs_weight": 0.166479892499666
+      },
+      {
+        "feature": "team_season_successful_passes_pg",
+        "weight": 0.16395055781306153,
+        "abs_weight": 0.16395055781306153
+      }
+    ]
+  },
+  "PC3": {
+    "explained_variance": 0.07187159171947818,
+    "top_features": [
+      {
+        "feature": "team_season_pressures_pg",
+        "weight": 0.19868918376326586,
+        "abs_weight": 0.19868918376326586
+      },
+      {
+        "feature": "team_season_fhalf_pressures_pg",
+        "weight": 0.1938841007879859,
+        "abs_weight": 0.1938841007879859
+      },
+      {
+        "feature": "team_season_aggressive_actions_pg",
+        "weight": 0.19123676424826502,
+        "abs_weight": 0.19123676424826502
+      },
+      {
+        "feature": "team_season_counterpressures_pg",
+        "weight": 0.18919288821053654,
+        "abs_weight": 0.18919288821053654
+      },
+      {
+        "feature": "team_season_fhalf_counterpressures_pg",
+        "weight": 0.18911000231746938,
+        "abs_weight": 0.18911000231746938
+      }
+    ]
+  },
+  "PC4": {
+    "explained_variance": 0.05944918200558473,
+    "top_features": [
+      {
+        "feature": "team_season_op_shots_outside_box_pg",
+        "weight": 0.20251088779636092,
+        "abs_weight": 0.20251088779636092
+      },
+      {
+        "feature": "team_season_np_shots_pg",
+        "weight": 0.2011646532731506,
+        "abs_weight": 0.2011646532731506
+      },
+      {
+        "feature": "team_season_shots_from_direct_free_kicks_pg",
+        "weight": 0.19165523867430195,
+        "abs_weight": 0.19165523867430195
+      },
+      {
+        "feature": "team_season_direct_free_kicks_pg",
+        "weight": 0.19134312054516558,
+        "abs_weight": 0.19134312054516558
+      },
+      {
+        "feature": "team_season_sp_shots_pg",
+        "weight": 0.1839758561582567,
+        "abs_weight": 0.1839758561582567
+      }
+    ]
+  },
+  "PC5": {
+    "explained_variance": 0.0567451827018227,
+    "top_features": [
+      {
+        "feature": "team_season_passes_conceded_pg",
+        "weight": 0.17909797260160495,
+        "abs_weight": 0.17909797260160495
+      },
+      {
+        "feature": "team_season_op_passes_conceded_pg",
+        "weight": 0.17533879262074295,
+        "abs_weight": 0.17533879262074295
+      },
+      {
+        "feature": "team_season_aggressive_actions_pg",
+        "weight": 0.17516445531884545,
+        "abs_weight": 0.17516445531884545
+      },
+      {
+        "feature": "team_season_successful_passes_conceded_pg",
+        "weight": 0.1746993789615868,
+        "abs_weight": 0.1746993789615868
+      },
+      {
+        "feature": "team_season_pressures_pg",
+        "weight": 0.16768335134240928,
+        "abs_weight": 0.16768335134240928
+      }
+    ]
+  },
+  "PC6": {
+    "explained_variance": 0.044380911274571104,
+    "top_features": [
+      {
+        "feature": "team_season_free_kick_goal_ratio",
+        "weight": 0.21922819979409183,
+        "abs_weight": 0.21922819979409183
+      },
+      {
+        "feature": "team_season_goals_from_free_kicks_pg",
+        "weight": 0.21524916844499287,
+        "abs_weight": 0.21524916844499287
+      },
+      {
+        "feature": "team_season_free_kick_shot_ratio",
+        "weight": 0.19876605634670877,
+        "abs_weight": 0.19876605634670877
+      },
+      {
+        "feature": "team_season_throw_in_xg_conceded_pg",
+        "weight": 0.1938163180365337,
+        "abs_weight": 0.1938163180365337
+      },
+      {
+        "feature": "team_season_xg_per_throw_in_conceded",
+        "weight": 0.18760916405584707,
+        "abs_weight": 0.18760916405584707
+      }
+    ]
+  },
+  "PC7": {
+    "explained_variance": 0.03927610270261822,
+    "top_features": [
+      {
+        "feature": "team_season_shots_from_throw_ins_conceded_pg",
+        "weight": 0.21042715585248228,
+        "abs_weight": 0.21042715585248228
+      },
+      {
+        "feature": "team_season_throw_in_shot_ratio_conceded",
+        "weight": 0.20775514692572972,
+        "abs_weight": 0.20775514692572972
+      },
+      {
+        "feature": "team_season_throw_in_xg_conceded_pg",
+        "weight": 0.20076593916554225,
+        "abs_weight": 0.20076593916554225
+      },
+      {
+        "feature": "team_season_xg_per_throw_in_conceded",
+        "weight": 0.19577804579234445,
+        "abs_weight": 0.19577804579234445
+      },
+      {
+        "feature": "team_season_sp_goals_pg",
+        "weight": -0.19205951082680034,
+        "abs_weight": 0.19205951082680034
+      }
+    ]
+  },
+  "PC8": {
+    "explained_variance": 0.03137364164274423,
+    "top_features": [
+      {
+        "feature": "team_season_successful_crosses_into_box_pg",
+        "weight": 0.224575195826773,
+        "abs_weight": 0.224575195826773
+      },
+      {
+        "feature": "team_season_crosses_into_box_pg",
+        "weight": 0.21923433485775914,
+        "abs_weight": 0.21923433485775914
+      },
+      {
+        "feature": "team_season_box_cross_ratio",
+        "weight": 0.17574487748192286,
+        "abs_weight": 0.17574487748192286
+      },
+      {
+        "feature": "team_season_successful_box_cross_ratio",
+        "weight": 0.17057387023152437,
+        "abs_weight": 0.17057387023152437
+      },
+      {
+        "feature": "team_season_obv_shot_pg",
+        "weight": -0.16354600026713317,
+        "abs_weight": 0.16354600026713317
+      }
+    ]
+  },
+  "PC9": {
+    "explained_variance": 0.03057521349937167,
+    "top_features": [
+      {
+        "feature": "team_season_xg_per_throw_in",
+        "weight": 0.22533144723492382,
+        "abs_weight": 0.22533144723492382
+      },
+      {
+        "feature": "team_season_throw_in_xg_pg",
+        "weight": 0.2230166568472071,
+        "abs_weight": 0.2230166568472071
+      },
+      {
+        "feature": "team_season_throw_in_goal_ratio",
+        "weight": 0.21002581916582752,
+        "abs_weight": 0.21002581916582752
+      },
+      {
+        "feature": "team_season_xg_per_direct_free_kick_conceded",
+        "weight": 0.20949593955112888,
+        "abs_weight": 0.20949593955112888
+      },
+      {
+        "feature": "team_season_goals_from_throw_ins_pg",
+        "weight": 0.2083848967990615,
+        "abs_weight": 0.2083848967990615
+      }
+    ]
+  },
+  "PC10": {
+    "explained_variance": 0.028358837650857904,
+    "top_features": [
+      {
+        "feature": "team_season_goals_from_throw_ins_pg",
+        "weight": 0.2189710139737083,
+        "abs_weight": 0.2189710139737083
+      },
+      {
+        "feature": "team_season_throw_in_goal_ratio",
+        "weight": 0.2127791888078192,
+        "abs_weight": 0.2127791888078192
+      },
+      {
+        "feature": "team_season_direct_free_kick_xg_pg",
+        "weight": 0.2060618105197344,
+        "abs_weight": 0.2060618105197344
+      },
+      {
+        "feature": "team_season_total_dribbles_conceded_pg",
+        "weight": -0.18069053838635654,
+        "abs_weight": 0.18069053838635654
+      },
+      {
+        "feature": "team_season_failed_dribbles_conceded_pg",
+        "weight": -0.16931768695240915,
+        "abs_weight": 0.16931768695240915
+      }
+    ]
+  }
+}

@@ -1,0 +1,237 @@
+{
+  "america_profile": {
+    "metadata": {
+      "n_seasons": 4,
+      "n_matches": 175,
+      "team_name": "Club Am\u00e9rica",
+      "win_rate": 53.714285714285715
+    },
+    "averages": {
+      "offensive_quality": 1.0922261186461961,
+      "defensive_quality": 0.6514964162072994,
+      "set_pieces": 0.08433446321718871,
+      "pressing_intensity": 1.7308936310021725,
+      "possession_control": 212.45006007893147,
+      "shot_quality": 8.464360349197333
+    },
+    "trends": {
+      "offensive_quality": {
+        "change": -0.18617819613183684,
+        "direction": "empeorando"
+      },
+      "defensive_quality": {
+        "change": 0.06195342819740124,
+        "direction": "mejorando"
+      },
+      "set_pieces": {
+        "change": -0.013174135666360082,
+        "direction": "empeorando"
+      },
+      "pressing_intensity": {
+        "change": -0.15829562786047946,
+        "direction": "empeorando"
+      },
+      "possession_control": {
+        "change": -15.836916865576143,
+        "direction": "empeorando"
+      },
+      "shot_quality": {
+        "change": 0.39585994438122896,
+        "direction": "mejorando"
+      }
+    },
+    "consistency": {
+      "offensive_quality": 0.19070930251611998,
+      "defensive_quality": 0.03984855540522344,
+      "set_pieces": 0.018153935461542866,
+      "pressing_intensity": 0.15267364403596856,
+      "possession_control": 14.35412615745859,
+      "shot_quality": 0.3546055457195377
+    },
+    "rankings": {
+      "offensive_quality": 92.12962962962963,
+      "defensive_quality": 28.240740740740744,
+      "set_pieces": 40.972222222222214,
+      "pressing_intensity": 60.41666666666667,
+      "possession_control": 54.166666666666664,
+      "shot_quality": 26.388888888888886
+    },
+    "dimensions": {
+      "offensive_quality": 92.12962962962963,
+      "defensive_quality": 28.240740740740744,
+      "set_pieces": 40.972222222222214,
+      "pressing_intensity": 60.41666666666667,
+      "possession_control": 54.166666666666664,
+      "shot_quality": 26.388888888888886
+    }
+  },
+  "squad_needs": {
+    "error": "No se encontraron datos de la plantilla actual"
+  },
+  "recommendations": {
+    "FWD": [
+      {
+        "player_name": "Ernesto Alexis Vega Rojas",
+        "team_name": "Toluca",
+        "primary_position": "Left Wing",
+        "minutes": 3490.6829,
+        "overall_fit": 98.37271193844171,
+        "technical_fit": 99.0219584646561,
+        "tactical_fit": 95.75100667591184,
+        "impact_score": 99.97064135153867,
+        "goals_90": 0.41252673,
+        "assists_90": 0.335178,
+        "obv_90": 0.36240327
+      },
+      {
+        "player_name": "C\u00e9sar Sa\u00fal Huerta Valera",
+        "team_name": "Pumas UNAM",
+        "primary_position": "Left Wing",
+        "minutes": 1643.2667,
+        "overall_fit": 94.87439640914987,
+        "technical_fit": 97.4378555621204,
+        "tactical_fit": 95.87099089102708,
+        "impact_score": 91.4567134145703,
+        "goals_90": 0.27384478,
+        "assists_90": 0.21907581,
+        "obv_90": 0.2906291
+      },
+      {
+        "player_name": "Florian Thauvin",
+        "team_name": "Tigres UANL",
+        "primary_position": "Right Wing",
+        "minutes": 1732.8169,
+        "overall_fit": 83.36522199069125,
+        "technical_fit": 60.715188125693075,
+        "tactical_fit": 98.35511836881064,
+        "impact_score": 93.16677324587283,
+        "goals_90": 0.25969276,
+        "assists_90": 0.15581565,
+        "obv_90": 0.29249242
+      }
+    ],
+    "MED": [
+      {
+        "player_name": "Leonardo Cecilio Fern\u00e1ndez L\u00f3pez",
+        "team_name": "Toluca",
+        "primary_position": "Centre Attacking Midfielder",
+        "minutes": 2673.6995,
+        "overall_fit": 99.99192696997662,
+        "technical_fit": 99.9987521836104,
+        "tactical_fit": 99.97798781578892,
+        "impact_score": 99.99704960278947,
+        "goals_90": 0.33661225,
+        "assists_90": 0.4039347,
+        "obv_90": 0.36605945
+      },
+      {
+        "player_name": "Jos\u00e9 Antonio Paradela",
+        "team_name": "Necaxa",
+        "primary_position": "Centre Attacking Midfielder",
+        "minutes": 3455.9836,
+        "overall_fit": 99.93148832153027,
+        "technical_fit": 99.93241583374923,
+        "tactical_fit": 99.87350834492018,
+        "impact_score": 99.98025793211997,
+        "goals_90": 0.28645968,
+        "assists_90": 0.33854327,
+        "obv_90": 0.2839041
+      },
+      {
+        "player_name": "Agust\u00edn Palavecino",
+        "team_name": "Necaxa",
+        "primary_position": "Right Defensive Midfielder",
+        "minutes": 3576.7168,
+        "overall_fit": 99.91095307904942,
+        "technical_fit": 99.85016078210627,
+        "tactical_fit": 100.0,
+        "impact_score": 99.89541944374922,
+        "goals_90": 0.20130192,
+        "assists_90": 0.15097645,
+        "obv_90": 0.25653067
+      }
+    ],
+    "DEF": [
+      {
+        "player_name": "Diego Armando Barbosa Zaragoza",
+        "team_name": "Tijuana",
+        "primary_position": "Right Back",
+        "minutes": 2428.7334,
+        "overall_fit": 98.77726316319603,
+        "technical_fit": 97.77081502606593,
+        "tactical_fit": 100.0,
+        "impact_score": 98.73565115449416,
+        "goals_90": 0.0,
+        "assists_90": 0.074112706,
+        "obv_90": 0.31174973
+      },
+      {
+        "player_name": "Yairo Yesid Moreno Berr\u00edo",
+        "team_name": "Pachuca",
+        "primary_position": "Left Back",
+        "minutes": 1629.8834,
+        "overall_fit": 97.30594002675117,
+        "technical_fit": 99.8796462079656,
+        "tactical_fit": 99.38905764872673,
+        "impact_score": 92.946704455272,
+        "goals_90": 0.16565602,
+        "assists_90": 0.0,
+        "obv_90": 0.2966267
+      },
+      {
+        "player_name": "Javier Ignacio Aquino Carmona",
+        "team_name": "Tigres UANL",
+        "primary_position": "Left Wing Back",
+        "minutes": 3914.0332,
+        "overall_fit": 93.9707253729056,
+        "technical_fit": 97.23030895380288,
+        "tactical_fit": 83.3957439482012,
+        "impact_score": 99.77541158461213,
+        "goals_90": 0.0,
+        "assists_90": 0.09197674,
+        "obv_90": 0.28766906
+      }
+    ],
+    "GK": [
+      {
+        "player_name": "Camilo Andr\u00e9s Vargas Gil",
+        "team_name": "Atlas",
+        "primary_position": "Goalkeeper",
+        "minutes": 4645.283,
+        "overall_fit": 99.27479554544925,
+        "technical_fit": 97.97254287355427,
+        "tactical_fit": 100.0,
+        "impact_score": 99.95544439915788,
+        "goals_90": 0.0,
+        "assists_90": 0.0,
+        "obv_90": 0.24589358
+      },
+      {
+        "player_name": "Jos\u00e9 Ra\u00fal Rangel Aguilar",
+        "team_name": "Guadalajara",
+        "primary_position": "Goalkeeper",
+        "minutes": 3365.0166,
+        "overall_fit": 98.08561462401286,
+        "technical_fit": 97.03071834843188,
+        "tactical_fit": 97.15511842781804,
+        "impact_score": 99.93807906776088,
+        "goals_90": 0.0,
+        "assists_90": 0.0,
+        "obv_90": 0.20911652
+      },
+      {
+        "player_name": "Washington Omar Aguerre Lima",
+        "team_name": "Quer\u00e9taro",
+        "primary_position": "Goalkeeper",
+        "minutes": 3197.433,
+        "overall_fit": 94.43903341508222,
+        "technical_fit": 88.3125451938923,
+        "tactical_fit": 96.38026091339717,
+        "impact_score": 98.90161235200222,
+        "goals_90": 0.0,
+        "assists_90": 0.0,
+        "obv_90": 0.17705874
+      }
+    ]
+  }
+}

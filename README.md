@@ -143,7 +143,14 @@ cp .env.example .env
 # Editar .env con tus credenciales de StatsBomb:
 # STATSBOMB_USERNAME=tu_usuario
 # STATSBOMB_PASSWORD=tu_contraseña
+
+# 5. Correr la aplicacion
+uv run main.py --full
 ```
+
+### Para entrar a la applicacion, deberas abrir:
+
+http://localhost:8501
 
 ### Dependencias principales
 ```
