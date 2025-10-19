@@ -339,9 +339,7 @@ Delanteros (FWD):     162 registros (10%)
 
 ### Ejemplo de Recomendación Generada
 ```
-==================================================
 TOP 5 DELANTEROS RECOMENDADOS PARA CLUB AMÉRICA
-==================================================
 
 1. [Jugador A] - [Equipo X]
    Overall Fit: 84.2/100
@@ -388,3 +386,7 @@ TOP 5 DELANTEROS RECOMENDADOS PARA CLUB AMÉRICA
 <div align="center">
   <sub>Desarrollado con ⚽ y 📊 por Andrés y Jaime</sub>
 </div>
+**Poner al toque el UV:**
+   ```bash
+   uv sync
+   ```
