@@ -72,10 +72,21 @@ def load_data():
     """Load and cache data"""
     try:
         data_loader = DataLoader()
-        return data_loader, data_loader.get_summary()
+        summary = data_loader.get_summary()
+        return data_loader, summary
     except Exception as e:
-        st.error(f"Error cargando datos: {e}")
-        return None, None
+        st.warning(f"⚠️ No se pudieron cargar los datos: {e}")
+        st.info("💡 **Solución**: Asegúrate de que los datos procesados estén disponibles en la carpeta `data/processed/`")
+        
+        # Return dummy data to prevent complete failure
+        dummy_summary = {
+            'total_players': 0,
+            'total_teams': 0,
+            'total_seasons': 0,
+            'avg_minutes': 0,
+            'positions': {}
+        }
+        return None, dummy_summary
 
 @st.cache_resource
 def initialize_analysis():
@@ -95,7 +106,8 @@ def initialize_analysis():
             analysis.initialize_analyzers()
         return analysis
     except Exception as e:
-        st.error(f"Error inicializando análisis: {e}")
+        st.warning(f"⚠️ Error inicializando análisis: {e}")
+        st.info("💡 **Solución**: Asegúrate de que los datos procesados estén disponibles y las credenciales de StatsBomb estén configuradas")
         return None
 
 def display_america_profile(analysis):
@@ -566,10 +578,16 @@ def display_similar_players(analysis):
 
 def display_dashboard(data_loader, summary):
     """Display main dashboard"""
-    st.markdown('<div class="main-header">⚽ Club América Scouting System</div>', unsafe_allow_html=True)
     
-    if not summary:
-        st.error("No se pudieron cargar los datos")
+    if not summary or summary['total_players'] == 0:
+        st.error("❌ No se pudieron cargar los datos")
+        st.markdown("""
+        **Posibles soluciones:**
+        
+        1. **Verifica que los datos procesados estén disponibles** en la carpeta `data/processed/`
+        2. **Ejecuta el pipeline de datos** usando `python main.py --data`
+        3. **Verifica las credenciales de StatsBomb** en las variables de entorno
+        """)
         return
     
     # Key metrics
@@ -595,9 +613,33 @@ def display_dashboard(data_loader, summary):
             title="Distribución por Posición"
         )
         st.plotly_chart(fig, use_container_width=True)
+    else:
+        st.info("📊 No hay datos de distribución por posición disponibles")
 
 def main():
     """Main application function"""
+    
+    # Startup message
+    st.markdown('<div class="main-header">⚽ Club América Scouting System</div>', unsafe_allow_html=True)
+    
+    # Check environment setup
+    env_file = Path(".env")
+    if not env_file.exists():
+        st.error("🚨 **Error de Configuración**")
+        st.markdown("""
+        **El archivo `.env` no está presente.** Para que la aplicación funcione correctamente:
+        
+        1. **En Streamlit Cloud**: Ve a Settings → Secrets y agrega:
+           ```
+           STATSBOMB_USERNAME=tu_usuario
+           STATSBOMB_PASSWORD=tu_contraseña
+           ```
+        
+        2. **Localmente**: Copia `env.example` a `.env` y configura tus credenciales
+        
+        3. **Datos**: Asegúrate de que los datos procesados estén disponibles en `data/processed/`
+        """)
+        return
     
     # Sidebar navigation
     st.sidebar.title("🏆 Club América Scouting")
