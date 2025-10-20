@@ -20,7 +20,7 @@ if "STREAMLIT_SHARING" in os.environ:
     
     # Check for secrets
     if not os.getenv("STATSBOMB_USERNAME") or not os.getenv("STATSBOMB_PASSWORD"):
-        st.error("🚨 **Credenciales de StatsBomb no configuradas**")
+        st.warning("⚠️ **Credenciales de StatsBomb no configuradas**")
         st.markdown("""
         Para configurar las credenciales en Streamlit Cloud:
         
@@ -33,8 +33,10 @@ if "STREAMLIT_SHARING" in os.environ:
            STATSBOMB_PASSWORD=tu_contraseña
            ```
         5. Guarda y reinicia la app
+        
+        **Nota**: La aplicación funcionará en modo limitado sin las credenciales.
         """)
-        st.stop()
+        # Don't stop, allow the app to continue
 
 # Import the main app
 try:
