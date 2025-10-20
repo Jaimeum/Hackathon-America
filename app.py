@@ -72,10 +72,31 @@ def load_data():
     """Load and cache data"""
     try:
         data_loader = DataLoader()
-        return data_loader, data_loader.get_summary()
+        summary = data_loader.get_summary()
+        return data_loader, summary
     except Exception as e:
-        st.error(f"Error cargando datos: {e}")
-        return None, None
+        # Check if it's a credentials issue
+        if "STATSBOMB_USERNAME" in str(e) or "credentials" in str(e).lower():
+            st.info("💡 **Credenciales de StatsBomb requeridas** para cargar datos completos")
+            st.info("📊 **Modo Demo**: La aplicación funcionará con datos de ejemplo")
+        else:
+            st.warning(f"⚠️ No se pudieron cargar los datos: {e}")
+            st.info("💡 **Solución**: Asegúrate de que los datos procesados estén disponibles en la carpeta `data/processed/`")
+        
+        # Return demo data to prevent complete failure
+        demo_summary = {
+            'total_players': 1250,
+            'total_teams': 18,
+            'total_seasons': 3,
+            'avg_minutes': 1200,
+            'positions': {
+                'FWD': 312,
+                'MED': 375,
+                'DEF': 438,
+                'GK': 125
+            }
+        }
+        return None, demo_summary
 
 @st.cache_resource
 def initialize_analysis():
@@ -95,13 +116,24 @@ def initialize_analysis():
             analysis.initialize_analyzers()
         return analysis
     except Exception as e:
-        st.error(f"Error inicializando análisis: {e}")
+        st.warning(f"⚠️ Error inicializando análisis: {e}")
+        st.info("💡 **Solución**: Asegúrate de que los datos procesados estén disponibles y las credenciales de StatsBomb estén configuradas")
         return None
 
 def display_america_profile(analysis):
     """Display Club América profile information"""
     if not analysis or not analysis.america_profile:
         st.warning("Perfil del América no disponible")
+        st.info("💡 **Configure las credenciales de StatsBomb** para generar el perfil del América")
+        
+        # Show demo profile
+        st.markdown("### 🎮 Perfil Demo del América")
+        st.markdown("""
+        **Esta es una vista de demostración.** Para ver el perfil real del América:
+        
+        1. Configure las credenciales de StatsBomb en Streamlit Cloud
+        2. Ejecute el análisis completo
+        """)
         return
     
     profile = analysis.america_profile
@@ -309,6 +341,16 @@ def display_player_analysis(analysis):
     
     if not analysis or not analysis.analyzer:
         st.warning("Analizador no disponible")
+        st.info("💡 **Configure las credenciales de StatsBomb** para habilitar el análisis de jugadores")
+        
+        # Show demo interface
+        st.markdown("### 🎮 Modo Demo")
+        st.markdown("""
+        **Esta es una vista de demostración.** Para analizar jugadores reales:
+        
+        1. Configure las credenciales de StatsBomb en Streamlit Cloud
+        2. Ejecute el pipeline de datos completo
+        """)
         return
     
     # Help text
@@ -412,6 +454,16 @@ def display_recommendations(analysis):
     
     if not analysis or not analysis.analyzer:
         st.warning("Analizador no disponible")
+        st.info("💡 **Configure las credenciales de StatsBomb** para habilitar las recomendaciones")
+        
+        # Show demo interface
+        st.markdown("### 🎮 Modo Demo")
+        st.markdown("""
+        **Esta es una vista de demostración.** Para ver recomendaciones reales:
+        
+        1. Configure las credenciales de StatsBomb en Streamlit Cloud
+        2. Ejecute el pipeline de datos completo
+        """)
         return
     
     # Position selector
@@ -493,6 +545,16 @@ def display_similar_players(analysis):
     
     if not analysis or not analysis.recommender:
         st.warning("Recomendador no disponible")
+        st.info("💡 **Configure las credenciales de StatsBomb** para habilitar la búsqueda de jugadores similares")
+        
+        # Show demo interface
+        st.markdown("### 🎮 Modo Demo")
+        st.markdown("""
+        **Esta es una vista de demostración.** Para buscar jugadores similares reales:
+        
+        1. Configure las credenciales de StatsBomb en Streamlit Cloud
+        2. Ejecute el pipeline de datos completo
+        """)
         return
     
     # Help text
@@ -566,11 +628,22 @@ def display_similar_players(analysis):
 
 def display_dashboard(data_loader, summary):
     """Display main dashboard"""
-    st.markdown('<div class="main-header">⚽ Club América Scouting System</div>', unsafe_allow_html=True)
     
-    if not summary:
-        st.error("No se pudieron cargar los datos")
+    if not summary or summary['total_players'] == 0:
+        st.error("❌ No se pudieron cargar los datos")
+        st.markdown("""
+        **Posibles soluciones:**
+        
+        1. **Verifica que los datos procesados estén disponibles** en la carpeta `data/processed/`
+        2. **Ejecuta el pipeline de datos** usando `python main.py --data`
+        3. **Verifica las credenciales de StatsBomb** en las variables de entorno
+        """)
         return
+    
+    # Check if we're in demo mode
+    is_demo_mode = data_loader is None
+    if is_demo_mode:
+        st.info("🎮 **Modo Demo**: Mostrando datos de ejemplo. Configure las credenciales para datos reales.")
     
     # Key metrics
     st.markdown('<div class="section-header">📊 Resumen del Dataset</div>', unsafe_allow_html=True)
@@ -595,9 +668,61 @@ def display_dashboard(data_loader, summary):
             title="Distribución por Posición"
         )
         st.plotly_chart(fig, use_container_width=True)
+    else:
+        st.info("📊 No hay datos de distribución por posición disponibles")
 
 def main():
     """Main application function"""
+    
+    # Startup message
+    st.markdown('<div class="main-header">⚽ Club América Scouting System</div>', unsafe_allow_html=True)
+    
+    # Check environment setup
+    import os
+    
+    # Check if we're in Streamlit Cloud or have environment variables
+    is_streamlit_cloud = os.getenv("STREAMLIT_SHARING") is not None
+    has_env_file = Path(".env").exists()
+    has_env_vars = os.getenv("STATSBOMB_USERNAME") is not None and os.getenv("STATSBOMB_PASSWORD") is not None
+    
+    if not has_env_file and not has_env_vars:
+        st.error("🚨 **Error de Configuración**")
+        
+        if is_streamlit_cloud:
+            st.markdown("""
+            **Variables de entorno no configuradas en Streamlit Cloud.**
+            
+            Para configurar las credenciales:
+            
+            1. Ve a tu app en [share.streamlit.io](https://share.streamlit.io)
+            2. Haz clic en **Settings** (⚙️)
+            3. Ve a la sección **Secrets**
+            4. Agrega:
+               ```
+               STATSBOMB_USERNAME=tu_usuario
+               STATSBOMB_PASSWORD=tu_contraseña
+               ```
+            5. Guarda y reinicia la app
+            """)
+        else:
+            st.markdown("""
+            **Variables de entorno no configuradas.**
+            
+            Para configurar las credenciales:
+            
+            1. **Localmente**: Copia `env.example` a `.env` y configura tus credenciales
+            2. **O exporta las variables**:
+               ```bash
+               export STATSBOMB_USERNAME=tu_usuario
+               export STATSBOMB_PASSWORD=tu_contraseña
+               ```
+            """)
+        
+        st.info("💡 **Nota**: Sin las credenciales, la aplicación funcionará en modo limitado (solo datos pre-procesados)")
+        
+        # Don't return, allow the app to continue in limited mode
+        if not has_env_vars:
+            st.warning("⚠️ **Modo Limitado**: Sin credenciales de StatsBomb, solo se mostrarán datos pre-procesados")
     
     # Sidebar navigation
     st.sidebar.title("🏆 Club América Scouting")
