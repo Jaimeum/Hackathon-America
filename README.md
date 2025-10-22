@@ -7,23 +7,6 @@
 
 ---
 
-## 📋 Tabla de Contenidos
-
-- [Descripción](#-descripción)
-- [Características Principales](#-características-principales)
-- [Metodología](#-metodología)
-- [Instalación](#-instalación)
-- [Uso](#-uso)
-- [Estructura del Proyecto](#-estructura-del-proyecto)
-- [Dataset](#-dataset)
-- [Resultados](#-resultados)
-- [Tecnologías](#-tecnologías)
-- [Contribuciones](#-contribuciones)
-- [Licencia](#-licencia)
-- [Contacto](#-contacto)
-
----
-
 ## Descripción
 
 Este proyecto desarrolla un **sistema de scouting basado en datos** que permite al Club América:
