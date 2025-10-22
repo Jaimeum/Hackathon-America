@@ -388,12 +388,4 @@ TOP 5 DELANTEROS RECOMENDADOS PARA CLUB AMÉRICA
 - [Paper: "On-Ball Value"](https://statsbomb.com/articles/soccer/on-ball-value-obv-evolved/) - StatsBomb
 
 
----
 
-<div align="center">
-  <sub>Desarrollado con ⚽ y 📊 por Andrés y Jaime</sub>
-</div>
-**Poner al toque el UV:**
-   ```bash
-   uv sync
-   ```
